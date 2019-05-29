@@ -21,7 +21,6 @@
 
 package org.esa.s3tbx.aerosol;
 
-import org.esa.s3tbx.idepix.algorithms.vgt.VgtOp;
 import org.esa.snap.core.datamodel.Band;
 import org.esa.snap.core.datamodel.Product;
 import org.esa.snap.core.datamodel.ProductData;
@@ -35,6 +34,8 @@ import org.esa.snap.core.gpf.annotations.SourceProduct;
 import org.esa.snap.core.gpf.annotations.TargetProduct;
 import org.esa.snap.core.util.Guardian;
 import org.esa.snap.core.util.ProductUtils;
+
+import org.esa.snap.idepix.spotvgt.VgtOp;
 
 /**
  * Create Vgt input product for Globalbedo aerosol retrieval and BBDR processor

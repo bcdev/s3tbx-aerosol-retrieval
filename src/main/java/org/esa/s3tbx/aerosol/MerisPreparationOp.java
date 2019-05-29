@@ -22,7 +22,6 @@
 package org.esa.s3tbx.aerosol;
 
 import org.esa.s3tbx.aerosol.util.AerosolUtils;
-import org.esa.s3tbx.idepix.algorithms.meris.MerisOp;
 import org.esa.s3tbx.processor.rad2refl.Rad2ReflOp;
 import org.esa.s3tbx.processor.rad2refl.Sensor;
 import org.esa.snap.core.datamodel.Band;
@@ -40,6 +39,8 @@ import org.esa.snap.core.gpf.annotations.TargetProduct;
 import org.esa.snap.core.gpf.common.SubsetOp;
 import org.esa.snap.core.image.ImageManager;
 import org.esa.snap.core.util.ProductUtils;
+
+import org.esa.snap.idepix.meris.IdepixMerisOp;
 
 import java.awt.*;
 import java.util.HashMap;
@@ -146,7 +147,7 @@ public class MerisPreparationOp extends Operator {
         // and add flag band to targetProduct
         Product idepixProduct;
         if (needPixelClassif) {
-            MerisOp merisOp = new MerisOp();
+            IdepixMerisOp merisOp = new IdepixMerisOp();
             merisOp.setParameterDefaultValues();
             merisOp.setParameter("computeCloudShadow", gaComputeCloudShadow);
             merisOp.setParameter("computeCloudBuffer", gaComputeCloudBuffer);

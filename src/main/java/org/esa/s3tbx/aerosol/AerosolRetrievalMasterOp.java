@@ -21,7 +21,6 @@
 
 package org.esa.s3tbx.aerosol;
 
-import org.esa.s3tbx.idepix.core.IdepixConstants;
 import org.esa.snap.core.datamodel.Band;
 import org.esa.snap.core.datamodel.Product;
 import org.esa.snap.core.datamodel.ProductData;
@@ -36,6 +35,8 @@ import org.esa.snap.core.gpf.annotations.TargetProduct;
 import org.esa.snap.core.image.ImageManager;
 import org.esa.snap.core.util.ProductUtils;
 import org.esa.snap.dataio.envisat.EnvisatConstants;
+
+import org.esa.snap.idepix.core.IdepixConstants;
 
 import java.awt.Dimension;
 import java.awt.RenderingHints;
