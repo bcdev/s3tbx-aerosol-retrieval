@@ -8,7 +8,7 @@
 
     <groupId>org.esa.s3tbx</groupId>
     <artifactId>s3tbx-aerosol-retrieval</artifactId>
-    <version>0.81</version>
+    <version>0.82-SNAPSHOT</version>
 
     <name>Aerosol retrieval</name>
     <packaging>nbm</packaging>
@@ -17,7 +17,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <snap.version>7.0.0-SNAPSHOT</snap.version>
+        <snap.version>7.0.0</snap.version>
         <javahelp.version>2.0.05</javahelp.version>
     </properties>
 
@@ -105,20 +105,25 @@
 
         <dependency>
             <groupId>org.esa.snap</groupId>
+            <artifactId>idepix-core</artifactId>
+            <version>7.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.esa.snap</groupId>
             <artifactId>idepix-meris</artifactId>
-            <version>0.82-SNAPSHOT</version>
+            <version>7.0.0</version>
         </dependency>
 
         <dependency>
             <groupId>org.esa.snap</groupId>
             <artifactId>idepix-olci</artifactId>
-            <version>0.85-SNAPSHOT</version>
+            <version>7.0.0</version>
         </dependency>
 
         <dependency>
             <groupId>org.esa.snap</groupId>
             <artifactId>idepix-spotvgt</artifactId>
-            <version>0.81-SNAPSHOT</version>
+            <version>7.0.0</version>
         </dependency>
 
         <dependency>
@@ -160,6 +165,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>build-helper-maven-plugin</artifactId>
+                <version>3.0.0</version>
             </plugin>
             <plugin>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -193,4 +199,52 @@
 
         </plugins>
     </build>
+
+    <distributionManagement>
+        <repository>
+            <id>snap-repo-public</id>
+            <name>Public Maven Repository for SNAP</name>
+            <url>https://snap-build-server.tilaa.cloud/nexus/repository/snap-maven-releases/</url>
+            <uniqueVersion>false</uniqueVersion>
+        </repository>
+        <snapshotRepository>
+            <id>snap-repo-public</id>
+            <name>Public Maven Snapshot Repository for SNAP</name>
+            <url>https://snap-build-server.tilaa.cloud/nexus/repository/snap-maven-snapshot/</url>
+            <uniqueVersion>false</uniqueVersion>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>snap-repo-public</id>
+            <name>Public Maven Repository for SNAP</name>
+            <url>https://snap-build-server.tilaa.cloud/nexus/repository/snap-maven-public/</url>
+            <releases>
+                <enabled>true</enabled>
+                <checksumPolicy>warn</checksumPolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <checksumPolicy>warn</checksumPolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>snap-repo-public</id>
+            <name>Public Maven Repository for SNAP</name>
+            <url>https://snap-build-server.tilaa.cloud/nexus/repository/snap-maven-public/</url>
+            <releases>
+                <enabled>true</enabled>
+                <checksumPolicy>warn</checksumPolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <checksumPolicy>warn</checksumPolicy>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
 </project>
